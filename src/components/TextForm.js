@@ -25,7 +25,7 @@ export default function TextForm(props) {
     const[text, setText]=useState("");
   return (
     <>
-    <div className='container'>
+    <div className='container' style={{color:props.mode === 'light'? 'black':'white'}}>
         <h1>{props.heading}</h1>
       <div className="mb-3">
         <textarea className='form-control' onChange={handleOnChage} value={text} id="myBox" rows="8"></textarea>
@@ -35,7 +35,7 @@ export default function TextForm(props) {
         <button className='btn btn-primary mx-1 mb-1' onClick={handleCopy}>Copy Text</button>
         <button className='btn btn-primary mx-1 mb-1' onClick={handleClearClick}>Clear Text</button>
     </div>
-    <div className='container'>
+    <div className='container' style={{color:props.mode === 'light'? 'black':'white'}}>
       <h2>Text Summary</h2>
       <p><b>{text.split(" ").length}</b> words and <b>{text.length}</b> Characters</p>
       <p><b>{0.008 * text.split(" ").length}</b>Minutes to read</p>
